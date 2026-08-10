@@ -864,7 +864,7 @@ services:
         limits:
           memory: 200M
     restart: unless-stopped
-    command: [ "--config=/etc/otelcol-config.yml", "--config=/etc/otelcol-config-extras.yml" ]
+    command: [ "--config=/etc/otelcol-config.yml", "--config=/etc/otelcol-config-extras.yml", "--feature-gates=connector.spanmetrics.useSecondAsDefaultMetricsUnit" ]
     user: 0:0
     volumes:
       - ${HOST_FILESYSTEM}:/hostfs:ro
